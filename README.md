@@ -17,11 +17,38 @@ JavaScript Game using Phaser 3
 - After clicking the mouse button on game board we can play the game.
 - We can use key use left right up down key move the player.
 
-## Link to Project
+### Requirements
 
-[JS Capstone Project- Game Development]
+We need [Node.js](https://nodejs.org) to install and run scripts.
 
-![]()
+## Install and run
+
+`npm install webpack webpack-cli -g`
+
+`npm update`
+
+Run next commands in your terminal:
+
+| Command | Description |
+|---------|-------------|
+| `npm install` | Install dependencies and launch browser with examples.|
+| `npm start` | Launch browser to show the examples. <br> Press `Ctrl + c` to kill **http-server** process. |
+
+---
+
+## Getting Started
+
+After running `npm start` visit: http://localhost:8000 in your browser. 
+
+### src directory
+
+Project files in src directory. 
+
+Updating and saving files in this folder will automatically rebuild the project and reload the project in the browser!
+
+### assets directory
+
+All of the file assets in the assets folder. This inlcudes images, audio and other data project may load. 
 
 ## Built With
 
