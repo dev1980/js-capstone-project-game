@@ -35,6 +35,9 @@ class GameScene extends Scene {
 
   createCoin() {
     this.coin = this.physics.add.sprite(200, 450, 'coin');
+    this.physics.add.collider(this.coin, this.platforms);
+    this.coin.setBounce(0.2);
+    this.coin.setCollideWorldBounds(true);
   }
 
   update() {
