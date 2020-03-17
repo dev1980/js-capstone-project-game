@@ -60,7 +60,7 @@ All of the file assets in the assets folder. This inlcudes images, audio and oth
 
 ## Live Demo
 
-[Live Demo Link](https://rawcdn.githack.com/dev1980/js-capstone-project-game/891cd8a7e8f74c262e3c952f698bf33f4278aada/index.html)
+[Live Demo Link](https://raw.githack.com/dev1980/js-capstone-project-game/game/index.html)
 
 ## Authors
 
