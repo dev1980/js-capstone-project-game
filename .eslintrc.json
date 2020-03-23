@@ -16,6 +16,8 @@
       "arrow-parens": "off",
       "no-use-before-define":"off",
       "import/no-unresolved":"off",
-      "no-underscore-dangle":"off"
+      "no-underscore-dangle":"off",
+      "space-before-function-paren": "off",
+      "no-undef": "off"
     }
   }

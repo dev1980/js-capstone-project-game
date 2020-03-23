@@ -5,7 +5,6 @@ export default class GameScene extends Phaser.Scene {
     super('Game');
     this.gameOver = false;
     this.score = 0;
-    this.player;
   }
 
   preload() {
