@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "dev": "npm run build && webpack-dev-server --port=8000 --mode development",
-    "heroku-postbuild": "ng build --prod"
+    "build": "webpack",
+    "start": "npm run build && webpack-dev-server --port=8000"
   },
   "repository": {
     "type": "git",
@@ -21,14 +20,18 @@
   },
   "homepage": "https://github.com/dev1980/js-capstone-project-game#readme",
   "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
-    "raw-loader": "^0.5.1",
+    "file-loader": "^4.2.0",
+    "raw-loader": "^4.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3",
-    "node": "^12.14.1"
+    "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
     "phaser": "^3.18.1"
