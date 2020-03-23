@@ -15,6 +15,7 @@
       "eol-last": "off",
       "arrow-parens": "off",
       "no-use-before-define":"off",
-      "import/no-unresolved":"off"
+      "import/no-unresolved":"off",
+      "no-underscore-dangle":"off"
     }
   }
