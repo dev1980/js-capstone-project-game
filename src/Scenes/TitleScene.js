@@ -1,3 +1,5 @@
+/* eslint-disable class-methods-use-this  */
+
 import Phaser from 'phaser';
 import config from '../Config/config';
 import Button from '../Objects/Button';
@@ -37,8 +39,8 @@ export default class TitleScene extends Phaser.Scene {
 
   centerButtonText(gameText, gameButton) {
     Phaser.Display.Align.In.Center(
-      this.gameText,
-      this.gameButton,
+      gameText,
+      gameButton,
     );
   }
 }
