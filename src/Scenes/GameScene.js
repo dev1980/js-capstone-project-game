@@ -4,6 +4,8 @@ export default class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
     this.gameOver = false;
+    this.score = 0;
+    this.player;
   }
 
   preload() {
@@ -23,7 +25,6 @@ export default class GameScene extends Phaser.Scene {
     this.createPlayer();
     this.createCoin();
     this.createBombs();
-    this.score = 0;
     const style = { font: '20px Arial', fill: '#fff' };
     this.scoreText = this.add.text(20, 20, `score: ${this.score}`, style);
     this.arrow = this.input.keyboard.createCursorKeys();

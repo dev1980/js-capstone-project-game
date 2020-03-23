@@ -25,3 +25,17 @@ class Game extends Phaser.Game {
 }
 
 window.game = new Game();
+
+// const apibtn = document.getElementById('btn');
+// const apikey = { "name": 'coin Collection' }
+// apibtn.addEventListener('click', async () =>{
+//   const result = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/',{
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json;charset=utf-8'
+//     },
+//     body: JSON.stringify(apikey)
+//   })
+//   const res = await result.json();
+//   console.log(res);
+// })

@@ -53,7 +53,7 @@ All of the file assets in the assets folder. This inlcudes images, audio and oth
 
 ## Live Demo
 
-[Live Demo Link](https://raw.githack.com/dev1980/js-capstone-project-game/game/index.html)
+[Live Demo Link](https://goofy-neumann-7345a8.netlify.com)
 
 ## Authors
 
