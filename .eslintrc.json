@@ -18,6 +18,8 @@
       "import/no-unresolved":"off",
       "no-underscore-dangle":"off",
       "space-before-function-paren": "off",
-      "no-undef": "off"
+      "no-undef": "off",
+      "func-names": "off",
+      
     }
   }
