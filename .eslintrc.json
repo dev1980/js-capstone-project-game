@@ -19,7 +19,6 @@
       "no-underscore-dangle":"off",
       "space-before-function-paren": "off",
       "no-undef": "off",
-      "func-names": "off",
-      
+      "func-names": "off"
     }
   }
