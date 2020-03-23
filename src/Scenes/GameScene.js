@@ -1,7 +1,13 @@
-import Phaser, { Scene } from 'phaser';
+import 'phaser';
 
-class GameScene extends Scene {
+export default class GameScene extends Phaser.Scene {
+  constructor() {
+    super('Game');
+  }
+
   preload() {
+    // load images
+    this.load.image('logo', 'assets/logo.png');
     this.load.image('sky', 'assets/sky.png');
     this.load.image('ground', 'assets/platform.png');
     this.load.image('coin', 'assets/coin.png');
@@ -15,6 +21,7 @@ class GameScene extends Scene {
     this.createPlatforms();
     this.createPlayer();
     this.createCoin();
+    this.createBombs();
     this.score = 0;
     const style = { font: '20px Arial', fill: '#fff' };
     this.scoreText = this.add.text(20, 20, `score: ${this.score}`, style);
@@ -28,9 +35,9 @@ class GameScene extends Scene {
 
   createPlayer() {
     this.player = this.physics.add.sprite(100, 450, 'player');
-    this.physics.add.collider(this.player, this.platforms);
     this.player.setBounce(0.2);
     this.player.setCollideWorldBounds(true);
+    this.physics.add.collider(this.player, this.platforms);
   }
 
   createCoin() {
@@ -38,6 +45,24 @@ class GameScene extends Scene {
     this.physics.add.collider(this.coin, this.platforms);
     this.coin.setBounce(0.2);
     this.coin.setCollideWorldBounds(true);
+  }
+
+  createBombs() {
+    this.bombs = this.physics.add.group();
+    const bomb = this.bombs.create(200, 16, 'bomb');
+    bomb.setBounce(1);
+    bomb.setGravity(100);
+    bomb.setCollideWorldBounds(true);
+    bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+    this.physics.add.collider(this.bombs, this.platforms);
+    this.physics.add.collider(this.player, this.bombs, this.hitBomb, null, this);
+  }
+
+  hitBomb(player, bomb) {
+    this.physics.pause();
+    player.setTint(0xff0000);
+    player.anims.play('turn');
+    this.gameOver = true;
   }
 
   update() {
@@ -65,5 +90,3 @@ class GameScene extends Scene {
     this.scoreText.setText(`score: ${this.score}`);
   }
 }
-
-export default GameScene;
