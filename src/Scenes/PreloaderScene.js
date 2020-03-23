@@ -1,4 +1,4 @@
-/*jshint -W065 */
+/* jshint -W065 */
 import Phaser from 'phaser';
 
 export default class PreloaderScene extends Phaser.Scene {
