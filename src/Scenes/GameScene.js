@@ -27,7 +27,7 @@ export default class GameScene extends Phaser.Scene {
     const style = { font: '20px Arial', fill: '#fff' };
     this.scoreText = this.add.text(20, 20, `score: ${this.score}`, style);
     this.arrow = this.input.keyboard.createCursorKeys();
-    this.gameOverText = this.add.text(350, 250, 'Game Over', {fontSize: '32px', fill: '#000'});
+    this.gameOverText = this.add.text(350, 250, 'Game Over', { fontSize: '32px', fill: '#000' });
     this.gameOverText.visible = false;
   }
 
@@ -61,7 +61,7 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.player, this.bombs, this.hitBomb, null, this);
   }
 
-  hitBomb(player, bomb) {
+  hitBomb(player) {
     this.physics.pause();
     player.setTint(0xff0000);
     player.anims.play('turn');
