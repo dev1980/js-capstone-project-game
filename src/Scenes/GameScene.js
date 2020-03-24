@@ -91,6 +91,7 @@ export default class GameScene extends Phaser.Scene {
     // eslint-disable-next-line no-empty
     } catch (error) {
     }
+    return undefined;
   }
 
   update() {
