@@ -3,7 +3,7 @@ import GameScene from '../Scenes/GameScene';
 const game = new GameScene();
 
 describe('Player test', () => {
-  it('game score', () => {
+  it('game scene', () => {
     expect(game).toBeInstanceOf(Object);
   });
 });

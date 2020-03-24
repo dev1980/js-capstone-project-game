@@ -1,10 +1,12 @@
 import Phaser from 'phaser';
+import Button from '../Objects/Button';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
     this.gameOver = false;
     this.score = 0;
+    this.player = { name: 'Dev' };
   }
 
   preload() {
@@ -29,6 +31,7 @@ export default class GameScene extends Phaser.Scene {
     this.arrow = this.input.keyboard.createCursorKeys();
     this.gameOverText = this.add.text(350, 250, 'Game Over', { fontSize: '32px', fill: '#000' });
     this.gameOverText.visible = false;
+    console.log(this.player.name)
   }
 
   createPlatforms() {
@@ -67,6 +70,29 @@ export default class GameScene extends Phaser.Scene {
     player.anims.play('turn');
     this.gameOver = true;
     this.gameOverText.visible = true;
+    this.uploadButton = new Button(this, 200, 250, 'blueButton1', 'blueButton2', ' UpScore', null);
+    this.playerButton = new Button(this, 300, 300, 'blueButton1', 'blueButton2', 'P-Score', 'Score');
+  }
+
+  async uploadScore() {
+    const playerScore = {
+      user: 'name',
+      score: this.score,
+    };
+    try {
+      const result = await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/quDNZqIoDEWvWqkfQrOG/scores/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify(playerScore),
+      });
+      const apiresult = await result.json();
+      console.log(apiresult);
+      return apiresult;
+    // eslint-disable-next-line no-empty
+    } catch (error) {
+    }
   }
 
   update() {

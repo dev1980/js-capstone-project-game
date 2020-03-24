@@ -4,7 +4,7 @@ JavaScript Game using Phaser 3
 
 ## About Project
 
->This project is a simple Game which use Javascript ES6 and HTML5 framework for game development (Phaser3 framework). 
+>This project is a simple Game which use Javascript ES6 and Phaser 3 HTML5 framework for game development (Phaser3 framework). 
 
 # Initial Game Plan
 - There are three character in game (Player, coin and bomb)
@@ -13,8 +13,7 @@ JavaScript Game using Phaser 3
 - Coin will move randomly.
 - There will be bomb bouncing, once the bomb will hit the player, then it is Game over.
 - Game Over Message will be display.
-- Once we click the screen game will display the game logo.
-- After clicking the mouse button on game board we can play the game.
+- After clicking the mouse button on game board we can play the game again.
 - We can use key use left right up down key move the player.
 
 ### Requirements
