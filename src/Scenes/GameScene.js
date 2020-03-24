@@ -31,7 +31,6 @@ export default class GameScene extends Phaser.Scene {
     this.arrow = this.input.keyboard.createCursorKeys();
     this.gameOverText = this.add.text(350, 250, 'Game Over', { fontSize: '32px', fill: '#000' });
     this.gameOverText.visible = false;
-    console.log(this.player.name)
   }
 
   createPlatforms() {
@@ -88,7 +87,6 @@ export default class GameScene extends Phaser.Scene {
         body: JSON.stringify(playerScore),
       });
       const apiresult = await result.json();
-      console.log(apiresult);
       return apiresult;
     // eslint-disable-next-line no-empty
     } catch (error) {

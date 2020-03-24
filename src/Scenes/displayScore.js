@@ -8,7 +8,7 @@ export default class DisplayScore extends Phaser.Scene {
   async create() {
     let y = 100;
     const score = await this.displayScore();
-    for (let i = 0; i < score.length; i++) {
+    for (let i = 0; i < score.length; i += 1) {
       y += 20;
       this.add.text(30, y, `player: ${score[i].user} score: ${score[i].score}`, { fill: '#fff' });
     }
@@ -27,7 +27,7 @@ export default class DisplayScore extends Phaser.Scene {
       const result = await response.json();
       return result;
     } catch (error) {
-      console.log('error unable to fetch the data Please try again!');
+        
     }
   }
 }
