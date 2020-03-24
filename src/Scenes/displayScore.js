@@ -26,9 +26,8 @@ export default class DisplayScore extends Phaser.Scene {
       );
       const result = await response.json();
       return result;
-    } catch (error) {
-      const err = { msg: error };
-    }
+    } catch(() => {
+    })
     return undefined;
   }
 }
