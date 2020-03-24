@@ -20,14 +20,13 @@ export default class DisplayScore extends Phaser.Scene {
   }
 
   async getScoreboard() {
-    try {
-      const response = await fetch(
-        'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/quDNZqIoDEWvWqkfQrOG/scores/',
-      );
-      const result = await response.json();
-      return result;
-    } catch(() => {
-    })
-    return undefined;
+    fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/quDNZqIoDEWvWqkfQrOG/scores/')
+      .then((response) => response.json())
+      .then((response) => {
+        const result = response;
+        return result;
+      })
+      .catch(() => {
+      });
   }
 }
