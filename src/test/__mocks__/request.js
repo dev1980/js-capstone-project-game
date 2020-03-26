@@ -10,7 +10,7 @@ export default function request(url) {
     process.nextTick(() => (users[userID]
       ? resolve(users[userID])
       : reject({
-      error: `User with ${userID} not found.`,
+        error: `User with ${userID} not found.`,
       })));
   });
 }

@@ -5,6 +5,6 @@ test('we should have score: 250 and score: 300', () => {
     expect.arrayContaining([
       expect.objectContaining({ score: 250 }),
       expect.objectContaining({ score: 300 }),
-    ])
+    ]),
   );
 });
