@@ -60,7 +60,7 @@ export default class GameScene extends Phaser.Scene {
     bomb.setBounce(1);
     bomb.setGravity(200);
     bomb.setCollideWorldBounds(true);
-    bomb.setVelocity(Phaser.Math.Between(-300, 300), 20);
+    bomb.setVelocity(Phaser.Math.Between(-300, 400), 20);
     this.physics.add.collider(this.bombs, this.platforms);
     this.physics.add.collider(this.player, this.bombs, this.hitBomb, null, this);
   }
@@ -72,8 +72,8 @@ export default class GameScene extends Phaser.Scene {
     this.gameOver = true;
     this.gameOverText.visible = true;
     this.userName = prompt('Enter your name:');
-    this.uploadButton = new Button(this, 200, 250, 'blueButton1', 'blueButton2', ' UpScore', null);
-    this.playerButton = new Button(this, 300, 300, 'blueButton1', 'blueButton2', 'P-Score', 'Score');
+    this.uploadButton = new Button(this, 200, 250, 'blueButton1', 'blueButton2', ' AddScore', null);
+    this.playerButton = new Button(this, 300, 300, 'blueButton1', 'blueButton2', 'HiScore', 'Score');
   }
 
   async uploadScore() {
