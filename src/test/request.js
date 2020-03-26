@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 const http = require('http');
 
 export default function request(url) {
