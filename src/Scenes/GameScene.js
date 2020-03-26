@@ -6,22 +6,22 @@ export default class GameScene extends Phaser.Scene {
     super('Game');
     this.gameOver = false;
     this.score = 0;
-    this.player = { name: 'Dev' };
+    this.userName;
   }
 
   preload() {
     // load images
-    this.load.image('logo', 'assets/logo.png');
-    this.load.image('sky', 'assets/sky.png');
-    this.load.image('ground', 'assets/platform.png');
-    this.load.image('coin', 'assets/coin.png');
-    this.load.image('bomb', 'assets/bomb.png');
-    this.load.image('player', 'assets/player.png');
+    this.load.image('logo', '../../assets/logo.png');
+    this.load.image('sky', '../../assets/sky.png');
+    this.load.image('ground', '../../assets/platform.png');
+    this.load.image('coin', '../../assets/coin.png');
+    this.load.image('bomb', '../../assets/bomb.png');
+    this.load.image('player', '../../assets/player.png');
+    this.load.html('userInput', '../../assets/inputUser.html');
   }
 
   create() {
-    const sky = this.add.image(0, 0, 'sky');
-    sky.setOrigin(0, 0);
+    this.add.image(0, 0, 'sky').setOrigin(0, 0);
     this.createPlatforms();
     this.createPlayer();
     this.createCoin();
@@ -56,9 +56,9 @@ export default class GameScene extends Phaser.Scene {
     this.bombs = this.physics.add.group();
     const bomb = this.bombs.create(200, 16, 'bomb');
     bomb.setBounce(1);
-    bomb.setGravity(100);
+    bomb.setGravity(200);
     bomb.setCollideWorldBounds(true);
-    bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+    bomb.setVelocity(Phaser.Math.Between(-300, 300), 20);
     this.physics.add.collider(this.bombs, this.platforms);
     this.physics.add.collider(this.player, this.bombs, this.hitBomb, null, this);
   }
@@ -69,6 +69,18 @@ export default class GameScene extends Phaser.Scene {
     player.anims.play('turn');
     this.gameOver = true;
     this.gameOverText.visible = true;
+    // this.userName = this.add.dom(200, 300).createFromCache('userInput');
+    // this.userName.addListener('click');
+    // this.userName.on('click', function(e) {
+    //   if (e.target.name === 'submit') {
+    //     this.playerName = this.getChildByName('user');
+    //     if (this.playerName !== '') {
+    //       this.removeListener('click');
+    //       //this.userName.setVisible(false);
+    //       this.uploadScore();
+    //     }
+    //   }
+    // });
     this.uploadButton = new Button(this, 200, 250, 'blueButton1', 'blueButton2', ' UpScore', null);
     this.playerButton = new Button(this, 300, 300, 'blueButton1', 'blueButton2', 'P-Score', 'Score');
   }

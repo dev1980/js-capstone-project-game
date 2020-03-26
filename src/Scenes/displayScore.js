@@ -6,11 +6,16 @@ export default class DisplayScore extends Phaser.Scene {
   }
 
   async create() {
-    let y = 100;
+    let y = 50;
     const score = await this.displayScore();
-    for (let i = 0; i < score.length; i += 1) {
+    function filteredItems() {
+      const filteredItems = score.filter((item) => item.score >= 200);
+      return filteredItems;
+    }
+    const filteredData = filteredItems();
+    for (let i = 0; i < filteredData.length; i += 1) {
       y += 20;
-      this.add.text(30, y, `player: ${score[i].user} score: ${score[i].score}`, { fill: '#fff' });
+      this.add.text(30, y, `player: ${filteredData[i].user} score: ${filteredData[i].score}`, { fill: '#fff' });
     }
   }
 
@@ -20,13 +25,15 @@ export default class DisplayScore extends Phaser.Scene {
   }
 
   async getScoreboard() {
-    fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/quDNZqIoDEWvWqkfQrOG/scores/')
-      .then((response) => response.json())
-      .then((response) => {
-        const result = response;
-        return result;
-      })
-      .catch(() => {
-      });
+    try {
+      const response = await fetch(
+        'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/quDNZqIoDEWvWqkfQrOG/scores/',
+      );
+      const result = await response.json();
+      return result;
+    } catch (err) {
+      console.log('error unable to fetch the data Please try again!');
+    }
+    return undefined;
   }
 }
