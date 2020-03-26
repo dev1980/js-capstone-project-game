@@ -7,3 +7,4 @@ describe('Player test', () => {
     expect(game).toBeInstanceOf(Object);
   });
 });
+

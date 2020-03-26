@@ -69,25 +69,14 @@ export default class GameScene extends Phaser.Scene {
     player.anims.play('turn');
     this.gameOver = true;
     this.gameOverText.visible = true;
-    // this.userName = this.add.dom(200, 300).createFromCache('userInput');
-    // this.userName.addListener('click');
-    // this.userName.on('click', function(e) {
-    //   if (e.target.name === 'submit') {
-    //     this.playerName = this.getChildByName('user');
-    //     if (this.playerName !== '') {
-    //       this.removeListener('click');
-    //       //this.userName.setVisible(false);
-    //       this.uploadScore();
-    //     }
-    //   }
-    // });
+    this.userName = prompt('Enter your name:');
     this.uploadButton = new Button(this, 200, 250, 'blueButton1', 'blueButton2', ' UpScore', null);
     this.playerButton = new Button(this, 300, 300, 'blueButton1', 'blueButton2', 'P-Score', 'Score');
   }
 
   async uploadScore() {
     const playerScore = {
-      user: 'name',
+      user: this.userName,
       score: this.score,
     };
     try {
