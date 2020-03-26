@@ -1,8 +1,7 @@
-'use strict';
-
-jest.mock('../request');
 
 import * as user from '../user';
+
+jest.mock('../request');
 
 it('works with resolves', () => {
   expect.assertions(1);
@@ -34,11 +33,9 @@ it('tests error with rejects', () => {
 
 test('tests error with promises', async () => {
   expect.assertions(1);
-  return user.getUserName(2).catch(e =>
-    expect(e).toEqual({
-      error: 'User with 2 not found.',
-    })
-  );
+  return user.getUserName(2).catch(e => expect(e).toEqual({
+    error: 'User with 2 not found.',
+  }));
 });
 
 it('tests error with async/await', async () => {

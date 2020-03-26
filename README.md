@@ -49,6 +49,7 @@ All of the file assets in the assets folder. This inlcudes images, audio and oth
 -   Javascript
 -   Webpack
 -   Phaser3
+-   Jest
 
 ## Live Demo
 

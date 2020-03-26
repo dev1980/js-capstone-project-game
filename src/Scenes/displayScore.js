@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import 'phaser';
 
 export default class DisplayScore extends Phaser.Scene {

@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-alert */
 import Phaser from 'phaser';
 import Button from '../Objects/Button';
 
