@@ -6,6 +6,10 @@ export default class DisplayScore extends Phaser.Scene {
     super('Score');
   }
 
+  preload() {
+
+  }
+
   async create() {
     let y = 50;
     const score = await this.displayScore();
@@ -18,6 +22,8 @@ export default class DisplayScore extends Phaser.Scene {
       y += 20;
       this.add.text(30, y, `player: ${filteredData[i].user} score: ${filteredData[i].score}`, { fill: '#fff' });
     }
+    this.playAgain = this.add.text(300, 300, 'Click To Reload Game', { fontSize: '32px', fill: '#000' });
+    this.input.on('pointerdown', () => this.scene.start('Boot'));
   }
 
   async displayScore() {

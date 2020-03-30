@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-alert */
 import Phaser from 'phaser';
-import Button from '../Objects/Button';
+// import Button from '../Objects/Button';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -31,7 +31,7 @@ export default class GameScene extends Phaser.Scene {
     const style = { font: '20px Arial', fill: '#fff' };
     this.scoreText = this.add.text(20, 20, `score: ${this.score}`, style);
     this.arrow = this.input.keyboard.createCursorKeys();
-    this.gameOverText = this.add.text(350, 250, 'Game Over', { fontSize: '32px', fill: '#000' });
+    this.gameOverText = this.add.text(400, 250, 'Game Over', { fontSize: '32px', fill: '#000' });
     this.gameOverText.visible = false;
   }
 
@@ -71,9 +71,12 @@ export default class GameScene extends Phaser.Scene {
     player.anims.play('turn');
     this.gameOver = true;
     this.gameOverText.visible = true;
+    this.inputForm();
+    this.uploadScore();
+  }
+
+  inputForm() {
     this.userName = prompt('Enter your name:');
-    this.uploadButton = new Button(this, 200, 250, 'blueButton1', 'blueButton2', ' AddScore', null);
-    this.playerButton = new Button(this, 300, 300, 'blueButton1', 'blueButton2', 'HiScore', 'Score');
   }
 
   async uploadScore() {
@@ -90,6 +93,9 @@ export default class GameScene extends Phaser.Scene {
         body: JSON.stringify(playerScore),
       });
       const apiresult = await result.json();
+      if (apiresult) {
+        this.scene.start('Score');
+      }
       return apiresult;
     // eslint-disable-next-line no-empty
     } catch (error) {
