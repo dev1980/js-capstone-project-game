@@ -4,13 +4,43 @@ JavaScript Game using Phaser 3
 
 ## About Project
 
->This project is a simple Game which use Javascript ES6 and HTML5 framework for game development (Phaser3 framework). 
+>This project is a simple Game which use Javascript ES6 and Phaser 3 HTML5 framework for game development (Phaser3 framework). 
 
-## Link to Project
+# Initial Game Plan
+- There are three character in game (Player, coin and bomb)
+- Player will collect the coin.
+- 10 score for each time player collecting the coin.
+- Coin will move randomly.
+- There will be bomb bouncing, once the bomb will hit the player, then it is Game over.
+- Game Over Message will be display.
+- After clicking the mouse button on game board we can play the game again.
+- We can use key use left right up down key move the player.
 
-[JS Capstone Project- Game Development]
+### Requirements
 
-![]()
+We need [Node.js](https://nodejs.org) to install and run scripts.
+
+## Install and run
+| Command | Description |
+|---------|-------------|
+| `npm install` | Install dependencies.|
+| `npm start` | Launch browser to show the examples. <br> Press `Ctrl + c` to kill **http-server** process. |
+
+---
+
+## Getting Started
+
+After running `npm start` visit: http://localhost:8000 in your browser. 
+
+### src directory
+
+Project files in src directory. 
+
+Updating and saving files in this folder will automatically rebuild the project and reload the project in the browser!
+
+### assets directory
+
+All of the file assets in the assets folder. This inlcudes images, audio and other data project may load. 
 
 ## Built With
 
@@ -19,10 +49,11 @@ JavaScript Game using Phaser 3
 -   Javascript
 -   Webpack
 -   Phaser3
+-   Jest
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://goofy-neumann-7345a8.netlify.com)
 
 ## Authors
 
