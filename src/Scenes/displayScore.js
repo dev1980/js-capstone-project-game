@@ -13,8 +13,14 @@ export default class DisplayScore extends Phaser.Scene {
   async create() {
     let y = 50;
     const score = await this.displayScore();
+    const arrScore = [];
     function filteredItems() {
-      const filteredItems = score.filter((item) => item.score >= 200);
+      const filteredItems = score.filter((item) => {
+        if (item.score >= 200 && arrScore.indexOf(item.user) == -1) {
+          arrScore.push(item.user);
+          return item;
+        }
+      });
       return filteredItems;
     }
     const filteredData = filteredItems();
