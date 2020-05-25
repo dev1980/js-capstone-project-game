@@ -55,6 +55,10 @@ All of the file assets in the assets folder. This inlcudes images, audio and oth
 
 [Live Demo Link](https://goofy-neumann-7345a8.netlify.com)
 
+## Future Improvements
+- Add logic to display high score with players name.
+- Implement sass for styling.
+
 ## Authors
 
 👤 **Brham Dev Mahato**
