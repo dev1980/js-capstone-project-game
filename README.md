@@ -4,17 +4,17 @@ JavaScript Game using Phaser 3
 
 ## About Project
 
->This project is a simple Game which use Javascript ES6 and Phaser 3 HTML5 framework for game development (Phaser3 framework). 
+>This project is a simple game that uses Javascript ES6 and Phaser 3 HTML5 framework for game development (Phaser3 framework). 
 
 # Initial Game Plan
-- There are three character in game (Player, coin and bomb)
-- Player will collect the coin.
+- There are three characters in the game (Player, coin and bomb)
+- The player will collect the coin.
 - 10 score for each time player collecting the coin.
-- Coin will move randomly.
+- The coin will move randomly.
 - There will be bomb bouncing, once the bomb will hit the player, then it is Game over.
 - Game Over Message will be display.
-- After clicking the mouse button on game board we can play the game again.
-- We can use key use left right up down key move the player.
+- After clicking the mouse button on the game board we can play the game again.
+- We can use key use left-right up-down key move the player.
 
 ### Requirements
 
@@ -40,7 +40,7 @@ Updating and saving files in this folder will automatically rebuild the project 
 
 ### assets directory
 
-All of the file assets in the assets folder. This inlcudes images, audio and other data project may load. 
+All of the file assets in the assets folder. This includes images, audio, and other data projects that may load. 
 
 ## Built With
 
@@ -56,7 +56,7 @@ All of the file assets in the assets folder. This inlcudes images, audio and oth
 [Live Demo Link](https://goofy-neumann-7345a8.netlify.com)
 
 ## Future Improvements
-- Add logic to display high score with players name.
+- Add logic to display a high score with the player's name.
 - Implement sass for styling.
 
 ## Authors
@@ -68,7 +68,7 @@ All of the file assets in the assets folder. This inlcudes images, audio and oth
 -   Linkedin: [linkedin](https://www.linkedin.com/in/dev1980/)
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/dev1980/js-capstone-project-game/issues).
 
@@ -79,4 +79,3 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MiT](https://opensource.org/licenses/MIT) licensed.
-
